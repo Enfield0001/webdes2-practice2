@@ -4,17 +4,49 @@
     <meta charset="UTF-8">
     <title>ARTDM173</title>
 	<meta name="Author" content="tb"/>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style>
+        .obj-fit, .not-fit {
+            border: solid;
+            margin:auto;
+            width: 50%;
+
+        }
+        .obj-fit img {
+            object-fit: cover;
+            object-position: center;
+            width:100%;
+            height: 300px;
+        }
+        .not-fit img {
+            width:100%;
+            height: 300px;
+        }
+    </style>
 </head>
 <body>
 
 <h1>ARTDM-173:Web Design II</h1>
 
-<picture>
-  <source media="(min-width: 650px)" srcset="https://unsplash.it/650">
-  <source media="(min-width: 460px)" srcset="https://unsplash.it/460">
-  <img src="https://unsplash.it/250" alt="small" style="width:auto;">
-</picture>
+<!-- section>
+    <picture>
+      <source media="(min-width: 650px)" srcset="https://unsplash.it/650">
+      <source media="(min-width: 460px)" srcset="https://unsplash.it/460">
+      <img src="https://unsplash.it/250" alt="small" style="width:auto;">
+    </picture>
+</section -->
 
+<section>
+   <h2>object-fit:cover;<br> object-position:center;</h2>
+    <div class="obj-fit">
+        <img src="https://unsplash.it/850" alt="">
+    </div>
+</section>
+
+<section>
+   <h2>only width 100%</h2>
+    <div class="not-fit">
+        <img src="https://unsplash.it/850" alt="">
+    </div>
+</section>
 </body>
 </html>

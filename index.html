@@ -5,18 +5,29 @@
     <title>ARTDM173</title>
 	<meta name="Author" content="tb"/>
 	<style>
-        .obj-fit, .not-fit {
-            border: solid;
-            margin:auto;
-            width: 50%;
-
+        body {
+            background: #eee;
         }
+        
+        section {
+            margin:2rem auto;
+            width:60%;
+            border: solid;
+            background: #fff;
+        }
+        
+        picture img {
+            margin:auto;
+            max-width: 100%;
+        }
+        
         .obj-fit img {
             object-fit: cover;
-            object-position: center;
+            object-position: center center;
             width:100%;
             height: 300px;
         }
+        
         .not-fit img {
             width:100%;
             height: 300px;
@@ -26,27 +37,41 @@
 <body>
 
 <h1>ARTDM-173:Web Design II</h1>
+<h2>&lt;picture>, &lt;source>, and object-fit</h2>
 
-<!-- section>
+<section class="not-fit">
+   <h3>&lt;picture> and &lt;source></h3>
     <picture>
       <source media="(min-width: 650px)" srcset="https://unsplash.it/650">
       <source media="(min-width: 460px)" srcset="https://unsplash.it/460">
-      <img src="https://unsplash.it/250" alt="small" style="width:auto;">
+      <img src="https://unsplash.it/250" alt="small">
     </picture>
-</section -->
+</section>
 
+<section class="obj-fit">
+   <h3>&lt;picture> and &lt;source></h3>
+    <picture>
+      <source media="(min-width: 650px)" srcset="https://unsplash.it/650">
+      <source media="(min-width: 460px)" srcset="https://unsplash.it/460">
+      <img src="https://unsplash.it/250" alt="small">
+    </picture>
+</section>
+
+<!--
+<h2>Object-fit with basic &lt;img></h2>
 <section>
-   <h2>object-fit:cover;<br> object-position:center;</h2>
+   <h3>object-fit:cover;<br> object-position:center;</h3>
     <div class="obj-fit">
         <img src="https://unsplash.it/850" alt="">
     </div>
 </section>
 
 <section>
-   <h2>only width 100%</h2>
+   <h3>only width 100%</h3>
     <div class="not-fit">
         <img src="https://unsplash.it/850" alt="">
     </div>
 </section>
+-->
 </body>
 </html>

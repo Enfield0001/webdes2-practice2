@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARTDM173</title>
 	<meta name="Author" content="tb"/>
 	<style>
@@ -17,18 +18,21 @@
         }
         
         picture img {
+            display:inline-block;
             margin:auto;
             max-width: 100%;
         }
         
         .obj-fit img {
+            display:inline-block;
             object-fit: cover;
-            object-position: center center;
+            object-position: center;
             width:100%;
             height: 300px;
         }
         
         .not-fit img {
+            display:inline-block;
             width:100%;
             height: 300px;
         }
@@ -37,27 +41,8 @@
 <body>
 
 <h1>ARTDM-173:Web Design II</h1>
-<h2>&lt;picture>, &lt;source>, and object-fit</h2>
+<h2>Using &lt;picture>, &lt;source>, and object-fit</h2>
 
-<section class="not-fit">
-   <h3>&lt;picture> and &lt;source></h3>
-    <picture>
-      <source media="(min-width: 650px)" srcset="https://unsplash.it/650">
-      <source media="(min-width: 460px)" srcset="https://unsplash.it/460">
-      <img src="https://unsplash.it/250" alt="small">
-    </picture>
-</section>
-
-<section class="obj-fit">
-   <h3>&lt;picture> and &lt;source></h3>
-    <picture>
-      <source media="(min-width: 650px)" srcset="https://unsplash.it/650">
-      <source media="(min-width: 460px)" srcset="https://unsplash.it/460">
-      <img src="https://unsplash.it/250" alt="small">
-    </picture>
-</section>
-
-<!--
 <h2>Object-fit with basic &lt;img></h2>
 <section>
    <h3>object-fit:cover;<br> object-position:center;</h3>
@@ -72,6 +57,27 @@
         <img src="https://unsplash.it/850" alt="">
     </div>
 </section>
--->
+
+<section class="not-fit">
+   <h3>&lt;picture> and &lt;source> no object-fit</h3>
+    <picture>
+      <source media="(min-width: 650px)" srcset="https://unsplash.it/650">
+      <source media="(min-width: 460px)" srcset="https://unsplash.it/460">
+      <img src="https://unsplash.it/250" alt="small">
+    </picture>
+</section>
+
+<section class="obj-fit">
+   <h3>&lt;picture> and &lt;source> with object-fit</h3>
+    <picture>
+      <source media="(min-width: 650px)" srcset="https://unsplash.it/650">
+      <source media="(min-width: 460px)" srcset="https://unsplash.it/460">
+      <img src="https://unsplash.it/250" alt="small">
+    </picture>
+</section>
+
+
+
+
 </body>
 </html>

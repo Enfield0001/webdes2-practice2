@@ -44,6 +44,71 @@
         main {
             font-family: "Avenir", "Helvetica", "Arial", sans-serif;
         }
+
+        /* #1: BG BODGE */
+        .bg-bodging div {
+            width: 100%;
+            height: 0;
+            padding-top: 150%;
+
+            background-color: blue;
+            background-image: url("_images/num1.jpg");
+            background-position: 75% 0;
+            background-size: cover;
+        }
+
+        @media only screen and (min-width: 400px) {
+            .bg-bodging div {
+                padding-top: 100%;
+                background-position: 90%;
+            }
+        }
+
+        @media only screen and (min-width: 600px) {
+            .bg-bodging div {
+                padding-top: 66%;
+                background-position: 0 0;
+            }
+        }
+
+
+        /* #2: OBJ FIT */
+        .personal-obj-fit div {
+            width: 100%;
+            height: 400px;
+            background-color: lightgray;
+        }
+
+        .personal-obj-fit img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+        /* #3: SRCSET RESPONSIVE */
+        /* 
+        There's no point in re-inventing the wheel. `picture img` sets the img tag inside a picture tag to scale with
+        the container's width, and in default behavior the height scales down as needed to maintain aspect ratio. To
+        re-write this rule would be redundant. This is what allows the image to gracefully resize without jutting
+        into sizes by steps. At this point it's less a matter of resizing and more a matter of optimizing speeds.
+
+        That said, if one wanted to make an image responsive using *only* the srcset, it's a simple matter of disabling
+        the max-width in the `picture img` rule. Alternatively there can be an overriding rule along the lines of:
+
+        .srcset-responsive picture img {
+            max-width: auto;
+        }
+
+        This comment has been included to outline The Method To The Madness, just in case. Here's to hoping these are read.
+        Please mention a bowl of M&Ms (with absolutely no brown ones, in the spirit of Van Halen) in the assignment comments.
+        */
+
+
+        /* #4: SRCSET CROPSWITCH */
+        /* 
+        No line of genuine CSS was written in the making of this example.
+        */
     </style>
 </head>
 <body>
@@ -90,18 +155,29 @@
     <h2>Personal variant</h2>
     <section class="bg-bodging">
         <h3>Responsive background images using CSS properties</h3>
+        <div></div>
     </section>
 
     <section class="personal-obj-fit">
         <h3>Non-cover object fitting</h3>
+        <div><img src="_images/num2.jpg" alt=""></div>
     </section>
 
     <section class="srcset-responsive">
         <h3>Srcset-utilizing responsive image</h3>
+        <picture>
+            <source media="(min-width: 600px)" srcset="_images/num3_600px.jpg">
+            <source media="(min-width: 400px)" srcset="_images/num3_400px.jpg">
+            <img src="_images/num3_200px.jpg" alt="">
+        </picture>
     </section>
 
     <section class="srcset-cropswitch">
         <h3>Crop switching via srcset</h3>
+        <picture>
+            <source media="(min-width: 600px)" srcset="_images/num4_landscape.jpg">
+            <img src="_images/num4_portrait.jpg" alt="">
+        </picture>
     </section>
 </main>
 
